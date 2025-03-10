@@ -31,16 +31,18 @@
  
 # A:10, B:11, C:12,..., F:15,...,Y:34, Z:35
 
-N, B = input().split(" ")
-N = ''.join(reversed(N))
+N, B = input().split()
 B = int(B)
 
-number = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+# 방법 1: using int()
+result = int(N,B)
+print(result)
 
-result = 0
+# 방법 2: convert each digit
+digits = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+result1 = 0
 
-for x in range(len(N)-1, -1, -1):
-  sum = number.index(N[x]) * (B**x)
-  result += sum
-
+for i in range(len(N)):
+  value = digits.index(N[i])
+  result1 = result1 * B + value
 print(result)
