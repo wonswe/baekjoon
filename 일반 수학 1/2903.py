@@ -39,3 +39,9 @@
 # 점의 개수 = (한 변의 점 개수)^2
 
 N = int(input())
+S = 2
+
+for _ in range(N):
+    S = (S * 2) - 1
+
+print(S ** 2)
