@@ -19,20 +19,30 @@
 
 # 1번 방에서부터 한 칸씩 멀어지는 6개, 12개, 18개, ..., 의 방
 
-N = int(input())
+# N = int(input())
 
-if N == 1:
-    print(1)
-else:
-    # 첫 번째 벌집 (방 2-7)이 2단계에 해당
-    iteration = 2 # 초기 단계: 중앙(1) + 첫 번째 벌집 -> 2단계
-    current_max = 7 # 첫 번째 벌집에서 2칸 떨어진 마지막 방 번호는 7 
-    addition_count = 6 # 첫 번째 벌집에는 6개의 방이 추가됨
+# if N == 1:
+#     print(1)
+# else:
+#     # 첫 번째 벌집 (방 2-7)이 2단계에 해당
+#     iteration = 2 # 초기 단계: 중앙(1) + 첫 번째 벌집 -> 2단계
+#     current_max = 7 # 첫 번째 벌집에서 2칸 떨어진 마지막 방 번호는 7 
+#     addition_count = 6 # 첫 번째 벌집에는 6개의 방이 추가됨
 
-    while N > current_max:
-        addition_count += 6 # 6 -> 12 -> 18 -> 24, ...
-        current_max += addition_count # 해당 iteration의 최대 방 번호
-        iteration += 1 # 1번 방에서부터 "한 칸" 추가
+#     while N > current_max:
+#         addition_count += 6 # 6 -> 12 -> 18 -> 24, ...
+#         current_max += addition_count # 해당 iteration의 최대 방 번호
+#         iteration += 1 # 1번 방에서부터 "한 칸" 추가
     
-    print(iteration)
+#     print(iteration)
 
+
+
+# another solution
+r = int(input())
+n = 1
+i = 1
+while r > n:
+    n += 6 * i
+    i += 1
+print(i)
