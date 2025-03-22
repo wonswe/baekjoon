@@ -19,19 +19,20 @@
 
 # 1번 방에서부터 한 칸씩 멀어지는 6개, 12개, 18개, ..., 의 방
 
-S = [2, 3, 4, 5, 6, 7]
 N = int(input())
-addition_count = 6
-iteration = 1
 
 if N == 1:
     print(1)
 else:
-    while N not in S:
-        S = list(range(S[-1] + 1, S[-1] + addition_count + 1))
-        addition_count += 6
-        iteration += 1
+    # 첫 번째 벌집 (방 2-7)이 2단계에 해당
+    iteration = 2 # 초기 단계: 중앙(1) + 첫 번째 벌집 -> 2단계
+    current_max = 7 # 첫 번째 벌집에서 2칸 떨어진 마지막 방 번호는 7 
+    addition_count = 6 # 첫 번째 벌집에는 6개의 방이 추가됨
 
+    while N > current_max:
+        addition_count += 6 # 6 -> 12 -> 18 -> 24, ...
+        current_max += addition_count # 해당 iteration의 최대 방 번호
+        iteration += 1 # 1번 방에서부터 "한 칸" 추가
+    
     print(iteration)
 
-# 위처럼 리스트를 만들지 않고 최대 방 번호만 저장해서 N이 그보다 클 때, 최대 방 번호 += 6, increment 횟수를 프린트
