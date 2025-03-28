@@ -23,3 +23,9 @@
 # 100 99 1000000000
 # 예제 출력 3 
 # 999999901
+
+import sys
+A, B, V = sys.stdin.readline().split()
+print(A)
+print(B)
+print(V)
