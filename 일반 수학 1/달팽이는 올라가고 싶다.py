@@ -22,10 +22,16 @@
 # 예제 입력 3 
 # 100 99 1000000000
 # 예제 출력 3 
-# 999999901
+# 9999999012
 
-import sys
-A, B, V = sys.stdin.readline().split()
-print(A)
-print(B)
-print(V)
+A, B, V = map(int, input().split())
+
+ground = 0
+days = 0
+
+while V > ground:
+    ground += A
+    ground -= B
+    days += 1
+
+print(days)
