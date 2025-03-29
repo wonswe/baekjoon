@@ -26,12 +26,15 @@
 
 A, B, V = map(int, input().split())
 
-ground = 0
-days = 0
+# current = 1
+# days = 0
 
-while V > ground:
-    ground += A
-    ground -= B
-    days += 1
+# while V > current:
+#     current += (A - B)
+#     days += 1
 
-print(days)
+# print(days)
+
+# 위 코드는 논리적으로는 맞지만, 반복 횟수가 너무 커서 큰 입력값 (예: 10억)일 때
+# 실질적으로 끝나지 않는 (매우 오래 걸리는) 문제가 발생 
+# 시간 복잡도 때문에 출력이 안 되는 것처럼 보이거나, 너무 오래 걸려서 멈춰버리는 현상
