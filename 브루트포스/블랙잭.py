@@ -27,3 +27,8 @@
 # 93 181 245 214 315 36 185 138 216 295
 # 예제 출력 2 
 # 497
+
+N, M = map(int, input().split())
+cards = (input().split())
+for card in cards:
+    int(card)
