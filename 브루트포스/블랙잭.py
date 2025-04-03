@@ -29,6 +29,5 @@
 # 497
 
 N, M = map(int, input().split())
-cards = (input().split())
-for card in cards:
-    int(card)
+cards = list(map(int, input().split()))
+print(cards)
