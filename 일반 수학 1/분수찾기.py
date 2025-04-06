@@ -78,4 +78,20 @@
 # 짝수라인 분모가 1씩 늘어나고 분자가 1씩 줄어듧
 # 홀수라인 분모가 1씩 줄어들고 분자가 1씩 늘어남
 
-n = int(input())
+num = int(input())
+line = 1
+
+while num > line:
+    num -= line
+    line += 1
+
+# 짝수일경우
+if line % 2 == 0:
+    a = num
+    b = line - num + 1
+# 홀수일경우
+elif line % 2 == 1:
+    a = line - num + 1
+    b = num
+
+print(f'{a}/{b}')
