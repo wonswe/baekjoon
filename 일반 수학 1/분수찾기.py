@@ -73,7 +73,6 @@
 # 3번 라인: 3/1 2/2 1/3
 # 4번 라인: 1/4 2/3 3/2 4/1
 # 5번 라인: 5/1 4/2 3/3 2/4 1/5
-# 6번 라인: 6/1 5/2 4/3 3/4 2/5 1/6
 
 # 짝수라인 분모가 1씩 늘어나고 분자가 1씩 줄어듧
 # 홀수라인 분모가 1씩 줄어들고 분자가 1씩 늘어남
@@ -85,13 +84,33 @@ while num > line:
     num -= line
     line += 1
 
+    # if num = 3
+    # 3 > 1:
+    # num = 3 - 1 = 2, line = 1 + 1 = 2 (line = 2)
+
+    # if num = 4
+    # 4 > 1:
+    # num = 4 - 1 = 3, line = 1 + 1 = 2 (3 > 2)
+    # num = 3 - 1 = 2, line = 2 + 1 = 3 (2 is not > 3) => (line = 3)
+
+    # if num = 5
+    # 5 > 1:
+    # num = 5 - 1 = 4, line = 1 + 1 = 2 (4 > 2)
+    # num = 4 - 1 = 3, line = 2 + 1 = 3 (2 is not > 3) => (line = 3)
+
+    # if num = 6
+    # 6 > 1:
+    # num = 6 - 1 = 5, line = 1 + 1 = 2 (5 > 2)
+    # num = 5 - 1 = 4, line = 2 + 1 = 3 (4 > 3)
+    # num = 4 - 1 = 3, line = 3 + 1 = 4 (3 is not > 3) => (line = 3)
+
 # 짝수일경우
-if line % 2 == 0:
-    a = num
-    b = line - num + 1
+if line % 2 == 0:  # num = 2, line = 2; 2 % 2 == 0:
+    a = num        # a = 2
+    b = line - num + 1 # b = 2 - 3 + 2 = 1
 # 홀수일경우
 elif line % 2 == 1:
     a = line - num + 1
     b = num
 
-print(f'{a}/{b}')
+print(f'{a}/{b}') # 2 / 1
